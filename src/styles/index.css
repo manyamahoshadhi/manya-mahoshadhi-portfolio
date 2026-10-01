@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-body bg-background text-white overflow-x-hidden transition-colors duration-300;
+  }
+
+  /* Light theme overrides */
+  html.light body {
+    @apply bg-slate-50 text-slate-900;
+  }
+
+  html.light .glass {
+    @apply bg-white/80 border-slate-200/80 shadow-lg;
+  }
+
+  html.light .text-muted {
+    color: #64748b;
+  }
+
+  html.light h1,
+  html.light h2,
+  html.light h3,
+  html.light h4,
+  html.light label {
+    color: #0f172a;
+  }
+
+  html.light .btn-outline {
+    @apply text-slate-800 border-slate-300;
+  }
+
+  html.light ::-webkit-scrollbar-track {
+    @apply bg-slate-100;
+  }
+
+  html.light input,
+  html.light textarea {
+    @apply text-slate-900 bg-white border-slate-200;
+  }
+
+  ::selection {
+    @apply bg-primary/40 text-white;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-surface-light rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary/60;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-surface backdrop-blur-xl border border-white/10 shadow-glass;
+  }
+
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8 py-20 md:py-28;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl
+      bg-gradient-to-r from-primary to-primary/80 text-white font-medium
+      hover:shadow-glow transition-all duration-300 hover:scale-[1.02]
+      focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl
+      border border-white/20 text-white font-medium glass
+      hover:border-secondary/50 hover:shadow-glow-cyan transition-all duration-300 hover:scale-[1.02]
+      focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+  }
+}
