@@ -98,9 +98,9 @@ export const about = {
 
     {
       year: '2026',
-      title: 'Beginning My Professional Career',
+      title: 'Software Engineering Graduate',
       description:
-        'Completed four years of undergraduate study and am currently awaiting graduation while pursuing opportunities in software and technology.',
+        'Completed my BSc (Hons) in Information Technology, specializing in Software Engineering, and began my professional journey in software engineering and technology.',
     },
   ],
 };

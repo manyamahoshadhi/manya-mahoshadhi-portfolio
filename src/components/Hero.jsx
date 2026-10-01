@@ -4,6 +4,7 @@ import { FaGithub, FaLinkedin, FaEnvelope, FaDownload, FaArrowDown } from 'react
 import { personalInfo, stats } from '../data/portfolio';
 import Particles from './ui/Particles';
 import AnimatedCounter from './ui/AnimatedCounter';
+import profilePhoto from '../assets/profile.png';
 
 const roles = ['Software Engineer', 'Full-Stack Developer', 'Problem Solver'];
 
@@ -141,23 +142,28 @@ export default function Hero() {
           transition={{ delay: 0.4, duration: 0.7 }}
         >
           <motion.div
-            className="relative w-56 h-56 sm:w-72 sm:h-72 md:w-80 md:h-80"
-            animate={{ y: [0, -16, 0] }}
-            transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-          >
-            <div className="absolute -inset-4 rounded-full bg-gradient-to-br from-primary/30 to-secondary/20 blur-2xl" />
-            <div className="relative w-full h-full rounded-full glass border-2 border-white/10 overflow-hidden flex items-center justify-center shadow-glow">
-              {/* Avatar placeholder */}
-              <div className="w-full h-full bg-gradient-to-br from-surface-solid to-background flex items-center justify-center">
-                <span className="font-heading text-6xl sm:text-7xl font-bold gradient-text">
-                  {personalInfo.name.charAt(0)}
-                </span>
-              </div>
+          className="relative w-56 h-56 sm:w-72 sm:h-72 md:w-80 md:h-80"
+          animate={{ y: [0, -16, 0] }}
+          transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
+        >
+          <div className="absolute -inset-4 rounded-full bg-gradient-to-br from-primary/30 to-secondary/20 blur-2xl" />
+
+          <div className="relative w-full h-full rounded-full glass border-2 border-white/10 overflow-hidden flex items-center justify-center shadow-glow">
+            
+            <div className="w-64 h-64 sm:w-72 sm:h-72 rounded-full overflow-hidden border-4 border-white/20 shadow-xl">
+              <img
+                src={profilePhoto}
+                alt="Manya Mahoshadhi"
+                className="w-full h-full object-cover object-[center_30%] "
+              />
             </div>
-            <div className="absolute -bottom-2 -right-2 px-4 py-2 rounded-xl glass text-sm font-medium text-secondary border border-secondary/30">
-              Available for work
-            </div>
-          </motion.div>
+
+          </div>
+
+          <div className="absolute -bottom-2 -right-2 px-4 py-2 rounded-xl glass text-sm font-medium text-secondary border border-secondary/30">
+            Available for work
+          </div>
+        </motion.div>
 
           <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-4 w-full max-w-lg">
             {stats.map((stat, i) => (
